@@ -1,0 +1,26 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+    i18n_domain="eea.waterhub.policy"
+    >
+
+  <genericsetup:registerProfile
+      name="default"
+      title="WaterHub Policy"
+      description="Configure a Plone site for the Copernicus Thematic Water Hub."
+      directory="profiles/default"
+      provides="Products.GenericSetup.interfaces.EXTENSION"
+      post_handler=".setuphandlers.post_install"
+      />
+
+  <genericsetup:registerProfile
+      name="uninstall"
+      title="WaterHub Policy: uninstall"
+      description="Remove configuration installed by the WaterHub policy."
+      directory="profiles/uninstall"
+      provides="Products.GenericSetup.interfaces.EXTENSION"
+      post_handler=".setuphandlers.uninstall"
+      />
+
+</configure>
+
