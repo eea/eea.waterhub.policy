@@ -22,5 +22,14 @@
       post_handler=".setuphandlers.uninstall"
       />
 
+  <genericsetup:upgradeStep
+      title="Install the EEA Volto policy"
+      description="Install the backend support required by the EEA Design System."
+      source="1000"
+      destination="1001"
+      handler=".upgrades.install_eea_volto_policy"
+      profile="eea.waterhub.policy:default"
+      />
+
 </configure>
 

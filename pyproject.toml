@@ -27,6 +27,7 @@ classifiers = [
 ]
 dependencies = [
   "Plone",
+  "eea.volto.policy>=12,<13",
   "plone.volto",
   "setuptools",
 ]
