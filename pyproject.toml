@@ -7,7 +7,7 @@ name = "eea.waterhub.policy"
 version = "1.0.0a0"
 description = "Plone policy package for the Copernicus Thematic Water Hub"
 readme = "README.md"
-requires-python = ">=3.10"
+requires-python = ">=3.12,<3.13"
 license = {text = "MIT"}
 authors = [
   {name = "European Environment Agency"},
@@ -21,13 +21,11 @@ classifiers = [
   "License :: OSI Approved :: MIT License",
   "Programming Language :: Python",
   "Programming Language :: Python :: 3 :: Only",
-  "Programming Language :: Python :: 3.10",
-  "Programming Language :: Python :: 3.11",
   "Programming Language :: Python :: 3.12",
 ]
 dependencies = [
-  "Plone",
-  "eea.volto.policy>=12,<13",
+  "Plone>=6.1.4,<6.2",
+  "eea.volto.policy==12.7",
   "plone.volto",
   "setuptools",
 ]

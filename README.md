@@ -6,6 +6,18 @@ The package owns WaterHub-specific backend configuration, including
 GenericSetup profiles, registry settings, content types, workflows, upgrade
 steps, and REST API customizations.
 
+## Supported versions
+
+The policy is developed and tested with the stack pinned by
+`waterhub-backend`:
+
+- Plone `6.1.4`
+- Python `3.12`
+- `eea.volto.policy` `12.7`
+
+Package metadata accepts compatible Plone `6.1.x` releases, while the backend
+image remains the source of the exact deployed Plone and Python versions.
+
 ## Installation
 
 Add `eea.waterhub.policy` to the backend requirements and install the
