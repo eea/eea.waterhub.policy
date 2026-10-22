@@ -24,10 +24,62 @@ python3.12 -m venv .venv
 .venv/bin/pytest
 ```
 
-Run the static checks with:
+The same commands are available through the Makefile:
+
+```shell
+make install
+make test
+```
+
+Run the strict static checks with:
 
 ```shell
 .venv/bin/ruff check src tests
 .venv/bin/ruff format --check src tests
 ```
+
+Apply safe formatting and import fixes before committing:
+
+```shell
+make format
+```
+
+## CI preflight
+
+Run all package quality gates with:
+
+```shell
+make ci
+```
+
+This runs strict Ruff checks, the test suite with JUnit and coverage output,
+and source/wheel package validation. It writes reports to:
+
+- `xunit-reports-current/junit.xml`
+- `xunit-reports-current/coverage/coverage.xml`
+- `xunit-reports-current/coverage/lcov.info`
+- `xunit-reports-current/coverage/lcov-report/index.html`
+
+The commands are intentionally usable without Make as well. The test command
+used by `make test-ci` is:
+
+```shell
+mkdir -p xunit-reports-current/coverage
+.venv/bin/pytest \
+  --junitxml=xunit-reports-current/junit.xml \
+  --cov=eea.waterhub.policy \
+  --cov-report=term-missing \
+  --cov-report=xml:xunit-reports-current/coverage/coverage.xml \
+  --cov-report=lcov:xunit-reports-current/coverage/lcov.info \
+  --cov-report=html:xunit-reports-current/coverage/lcov-report
+```
+
+Python coverage for SonarQube is provided by `coverage.xml`; `lcov.info` and
+the HTML report are retained for other reporting consumers and local review.
+
+## Contributing and releases
+
+See [CONTRIBUTING.md](CONTRIBUTING.md) for the contribution workflow. Package
+release automation is not configured yet; see [CHANGES.md](CHANGES.md) for
+the current release notes.
 

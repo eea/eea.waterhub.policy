@@ -2,6 +2,7 @@
 *.py[cod]
 __pycache__/
 .coverage
+.coverage.*
 .pytest_cache/
 .ruff_cache/
 .tox/
@@ -9,4 +10,5 @@ __pycache__/
 build/
 dist/
 htmlcov/
+xunit-reports-current/
 

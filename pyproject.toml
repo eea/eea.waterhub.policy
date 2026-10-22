@@ -34,10 +34,12 @@ dependencies = [
 
 [project.optional-dependencies]
 test = [
+  "build",
   "plone.app.testing",
   "pytest",
   "pytest-cov",
   "ruff",
+  "twine",
 ]
 
 [project.urls]
@@ -62,6 +64,25 @@ include = ["eea.waterhub.policy"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
+addopts = ["--strict-config", "--strict-markers"]
+
+[tool.coverage.run]
+branch = true
+relative_files = true
+source = ["eea.waterhub.policy"]
+
+[tool.coverage.report]
+show_missing = true
+skip_empty = true
+
+[tool.coverage.html]
+directory = "xunit-reports-current/coverage/lcov-report"
+
+[tool.coverage.xml]
+output = "xunit-reports-current/coverage/coverage.xml"
+
+[tool.coverage.lcov]
+output = "xunit-reports-current/coverage/lcov.info"
 
 [tool.ruff]
 target-version = "py310"
