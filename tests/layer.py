@@ -1,9 +1,8 @@
 """Integration test layer."""
 
+from plone.app.testing import PLONE_FIXTURE, IntegrationTesting, PloneSandboxLayer
+
 from eea.waterhub.policy import PACKAGE_NAME
-from plone.app.testing import IntegrationTesting
-from plone.app.testing import PLONE_FIXTURE
-from plone.app.testing import PloneSandboxLayer
 
 
 class WaterHubPolicyLayer(PloneSandboxLayer):
@@ -25,4 +24,3 @@ WATERHUB_POLICY_INTEGRATION_TESTING = IntegrationTesting(
     bases=(WATERHUB_POLICY_FIXTURE,),
     name="WaterHubPolicyLayer:IntegrationTesting",
 )
-

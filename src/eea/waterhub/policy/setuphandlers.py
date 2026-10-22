@@ -7,4 +7,3 @@ def post_install(context):
 
 def uninstall(context):
     """Run after the uninstall profile has been imported."""
-
