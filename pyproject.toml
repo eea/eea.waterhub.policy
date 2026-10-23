@@ -36,6 +36,7 @@ test = [
   "plone.app.testing",
   "pytest",
   "pytest-cov",
+  "pytest-plone",
   "ruff",
   "twine",
 ]

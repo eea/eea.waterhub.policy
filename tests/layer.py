@@ -11,8 +11,11 @@ class WaterHubPolicyLayer(PloneSandboxLayer):
     defaultBases = (PLONE_FIXTURE,)
 
     def setUpZope(self, app, configuration_context):
+        import eea.volto.policy
+
         import eea.waterhub.policy
 
+        self.loadZCML(package=eea.volto.policy)
         self.loadZCML(package=eea.waterhub.policy)
 
     def setUpPloneSite(self, portal):

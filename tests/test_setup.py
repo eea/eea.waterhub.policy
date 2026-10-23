@@ -1,5 +1,6 @@
 """Policy installation tests."""
 
+import pytest
 from plone.browserlayer.utils import registered_layers
 from Products.CMFCore.utils import getToolByName
 
@@ -12,6 +13,10 @@ class TestSetup:
     """Verify the default and uninstall profiles."""
 
     layer = WATERHUB_POLICY_INTEGRATION_TESTING
+
+    @pytest.fixture(autouse=True)
+    def _integration_layer(self, integration):
+        """Run every setup test inside the policy integration layer."""
 
     def test_package_is_installed(self):
         portal = self.layer["portal"]
