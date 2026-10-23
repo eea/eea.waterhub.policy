@@ -89,6 +89,23 @@ mkdir -p xunit-reports-current/coverage
 Python coverage for SonarQube is provided by `coverage.xml`; `lcov.info` and
 the HTML report are retained for other reporting consumers and local review.
 
+## Secret scanning
+
+The Betterleaks GitHub Action scans the current repository content on every
+push and pull request using `.gitleaks.toml`. When it finds a potential secret,
+the check fails and uploads a redacted `betterleaks-report` artifact.
+
+Optional failure emails require these repository or organization secrets:
+
+- `SMTP_URL`
+- `SMTP_PORT` (defaults to `25`)
+- `SMTP_EMAIL`
+- `SMTP_PASSWORD` (optional when the SMTP server needs no authentication)
+
+For a real secret, remove it, rotate it, and move it to the approved secret
+store. For a verified false positive, add `#betterleaks:allow` on the same line
+and explain the exception in the pull request. Never allowlist a real secret.
+
 ## Contributing and releases
 
 See [CONTRIBUTING.md](CONTRIBUTING.md) for the contribution workflow. Package
