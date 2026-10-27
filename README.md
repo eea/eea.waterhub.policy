@@ -46,8 +46,8 @@ make test
 Run the strict static checks with:
 
 ```shell
-.venv/bin/ruff check src tests
-.venv/bin/ruff format --check src tests
+.venv/bin/ruff check src
+.venv/bin/ruff format --check src
 ```
 
 Apply safe formatting and import fixes before committing:
