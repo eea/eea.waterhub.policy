@@ -1,0 +1,12 @@
+# syntax=docker/dockerfile:1
+
+ARG PLONE_IMAGE=eeacms/plone-backend:6.1.4-16
+FROM ${PLONE_IMAGE}
+
+COPY --chown=plone:plone . /app/policy
+WORKDIR /app/policy
+
+RUN pip install --no-cache-dir --editable ".[test]" \
+    --constraint https://dist.plone.org/release/6.1.4/constraints.txt
+
+CMD ["make", "test-ci"]

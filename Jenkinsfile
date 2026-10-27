@@ -117,8 +117,10 @@ pipeline {
         parallel(
           "Plone6 & Python3": {
             node(label: 'docker') {
-              sh '''docker run --pull="always" -i --name="$BUILD_TAG-tests" -e GIT_NAME="$GIT_NAME" -e GIT_BRANCH="$BRANCH_NAME" -e DEVELOP="src/$GIT_NAME" -e GIT_CHANGE_ID="$CHANGE_ID" eeacms/plone-test:6'''
-              sh '''docker cp $BUILD_TAG-tests:/app/coverage ./coverage'''
+              checkout scm
+              sh '''docker build --pull --file Dockerfile.test --tag="$BUILD_TAG-tests-image" .'''
+              sh '''docker run --name="$BUILD_TAG-tests" "$BUILD_TAG-tests-image"'''
+              sh '''docker cp $BUILD_TAG-tests:/app/policy/xunit-reports-current ./coverage'''
               sh '''docker rm -v $BUILD_TAG-tests'''
               stash includes: 'coverage/**', name: 'coverage'
             }
@@ -139,14 +141,12 @@ pipeline {
           script {
             checkout scm
             unstash 'coverage'
-            junit 'coverage/junit-results/testreports/*.xml'
+            junit 'coverage/junit.xml'
             def scannerHome = tool 'SonarQubeScanner';
             def nodeJS = tool 'NodeJS11';
-            sh "sed -i 's|<source>/app</source>|<source>.</source>|g' coverage/coverage.xml"
-            sh "sed -i \"s|filename=\\\"src/$GIT_NAME/|filename=\\\"|g\" coverage/coverage.xml"
-            sh "sed -i \"s|package name=\\\"src\\.$GIT_NAME|package name=\\\"|g\" coverage/coverage.xml"
+            sh "sed -i 's|<source>/app/policy</source>|<source>.</source>|g' coverage/coverage/coverage.xml"
             withSonarQubeEnv('Sonarqube') {
-              sh "export PATH=$PATH:${scannerHome}/bin:${nodeJS}/bin; sonar-scanner -Dsonar.python.xunit.skipDetails=true -Dsonar.python.xunit.reportPath=coverage/junit-results/testreports/*.xml -Dsonar.python.coverage.reportPaths=coverage/coverage.xml -Dsonar.sources=./src  -Dsonar.projectKey=\"${GIT_NAME}\" -Dsonar.projectName=\"${GIT_NAME}\" -Dsonar.branch.name=\"${BRANCH_NAME}\""
+              sh "export PATH=$PATH:${scannerHome}/bin:${nodeJS}/bin; sonar-scanner -Dsonar.python.xunit.skipDetails=true -Dsonar.python.xunit.reportPath=coverage/junit.xml -Dsonar.python.coverage.reportPaths=coverage/coverage/coverage.xml -Dsonar.sources=./src -Dsonar.projectKey=\"${GIT_NAME}\" -Dsonar.projectName=\"${GIT_NAME}\" -Dsonar.branch.name=\"${BRANCH_NAME}\""
               sh '''try=2; while [ \$try -gt 0 ]; do curl -s -XPOST -u "${SONAR_AUTH_TOKEN}:" "${SONAR_HOST_URL}api/project_tags/set?project=${GIT_NAME}&tags=${SONARQUBE_TAGS}" > set_tags_result; if [ \$(grep -ic error set_tags_result ) -eq 0 ]; then try=0; else cat set_tags_result; echo "... Will retry"; sleep 60; try=\$(( \$try - 1 )); fi; done'''
             }
           }
