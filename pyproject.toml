@@ -57,13 +57,13 @@ include-package-data = true
 [tool.setuptools.packages.find]
 where = ["src"]
 namespaces = true
-include = ["eea.waterhub.policy"]
+include = ["eea.waterhub.policy*"]
 
 [tool.setuptools.package-data]
 "eea.waterhub.policy" = ["*.zcml", "profiles/**/*.xml"]
 
 [tool.pytest.ini_options]
-testpaths = ["tests"]
+testpaths = ["src/eea/waterhub/policy/tests"]
 addopts = ["--strict-config", "--strict-markers"]
 
 [tool.coverage.run]

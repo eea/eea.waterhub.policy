@@ -37,12 +37,12 @@ coverage:
 	@echo "Coverage report: xunit-reports-current/coverage/lcov-report/index.html"
 
 lint:
-	$(VENV)/bin/ruff check src tests
-	$(VENV)/bin/ruff format --check src tests
+	$(VENV)/bin/ruff check src
+	$(VENV)/bin/ruff format --check src
 
 format:
-	$(VENV)/bin/ruff check --fix src tests
-	$(VENV)/bin/ruff format src tests
+	$(VENV)/bin/ruff check --fix src
+	$(VENV)/bin/ruff format src
 
 package:
 	rm -rf build dist
@@ -53,6 +53,6 @@ ci: lint test-ci package
 
 clean:
 	rm -rf .coverage .pytest_cache .ruff_cache .venv build dist htmlcov xunit-reports-current
-	find src tests -type d -name __pycache__ -prune -exec rm -rf {} +
+	find src -type d -name __pycache__ -prune -exec rm -rf {} +
 	find src -type d -name '*.egg-info' -prune -exec rm -rf {} +
 
