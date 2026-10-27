@@ -9,4 +9,4 @@ WORKDIR /app/policy
 RUN pip install --no-cache-dir --editable ".[test]" \
     --constraint https://dist.plone.org/release/6.1.4/constraints.txt
 
-CMD ["make", "test-ci"]
+CMD ["make", "VENV=/app", "test-ci"]
