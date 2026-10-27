@@ -1,5 +1,9 @@
-# Changelog
+Changelog
+=========
 
+1.0 - (2026-10-27)
+---------------------------
+* Change: Develop [GhitaB]
 ## 1.0 (2026-10-27)
 
 - Add Betterleaks secret scanning and repository-specific detection rules.
@@ -8,4 +12,3 @@
   eea.volto.policy 12.7 versions with waterhub-backend.
 - Test dependency installation, upgrade behavior, and uninstall cleanup.
 - Run pytest integration tests through the WaterHub Plone testing layer.
-
