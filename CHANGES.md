@@ -1,6 +1,6 @@
 # Changelog
 
-## 1.0.0a0 (unreleased)
+## 1.0 (unreleased)
 
 - Add Betterleaks secret scanning and repository-specific detection rules.
 - Initial Plone 6 policy package.
