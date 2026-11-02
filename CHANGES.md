@@ -1,6 +1,11 @@
 Changelog
 =========
 
+Unreleased
+----------
+
+- Support Plone 6.1.5 and eea.volto.policy 14.2.
+
 1.0 - (2026-10-27)
 ---------------------------
 * Change: Develop [GhitaB]

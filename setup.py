@@ -28,8 +28,8 @@ setup(
         "eea.waterhub.policy": ["*.txt", "*.zcml", "profiles/**/*.xml"],
     },
     install_requires=[
-        "Plone>=6.1.4,<6.2",
-        "eea.volto.policy==12.7",
+        "Plone>=6.1.5,<6.2",
+        "eea.volto.policy==14.2",
         "plone.volto",
         "setuptools",
     ],
