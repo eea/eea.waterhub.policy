@@ -111,4 +111,3 @@ and explain the exception in the pull request. Never allowlist a real secret.
 See [CONTRIBUTING.md](CONTRIBUTING.md) for the contribution workflow. Package
 release automation is not configured yet; see [CHANGES.md](CHANGES.md) for
 the current release notes.
-
