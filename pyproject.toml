@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "eea.waterhub.policy"
-version = "1.0"
+version = "1.1"
 description = "Plone policy package for the Copernicus Thematic Water Hub"
 readme = "README.md"
 requires-python = ">=3.12,<3.14"
