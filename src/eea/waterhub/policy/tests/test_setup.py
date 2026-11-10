@@ -1,6 +1,7 @@
 """Policy installation tests."""
 
 import pytest
+from collective.taxonomy.interfaces import ITaxonomy
 from plone.browserlayer.utils import registered_layers
 from Products.CMFCore.utils import getToolByName
 
@@ -32,6 +33,36 @@ class TestSetup:
         setup_tool = getToolByName(portal, "portal_setup")
         profile = "eea.volto.policy:default"
         assert setup_tool.getLastVersionForProfile(profile) != "unknown"
+
+    @pytest.mark.parametrize(
+        ("name", "title", "expected_terms"),
+        (
+            ("copernicus_services", "Copernicus Services", 6),
+            ("copernicus_components", "Copernicus Components", 26),
+            ("copernicus_themes", "Copernicus themes", 36),
+        ),
+    )
+    def test_copernicus_taxonomy_is_installed(self, name, title, expected_terms):
+        portal = self.layer["portal"]
+        taxonomy = portal.getSiteManager().queryUtility(
+            ITaxonomy, name=f"collective.taxonomy.{name}"
+        )
+
+        assert taxonomy is not None
+        assert taxonomy.title == title
+        assert len(taxonomy.data["en"]) == expected_terms
+
+    def test_taxonomy_upgrade_is_available_from_profile_1001(self):
+        portal = self.layer["portal"]
+        setup_tool = getToolByName(portal, "portal_setup")
+        profile = "eea.waterhub.policy:default"
+
+        setup_tool.setLastVersionForProfile(profile, "1001")
+        upgrades = setup_tool.listUpgrades(profile, simple=True)
+        setup_tool.setLastVersionForProfile(profile, "1002")
+
+        assert [step.dest for step in upgrades] == [("1002",)]
+        assert upgrades[0].title == "Import the Copernicus taxonomies"
 
     def test_uninstall_profile_cleans_up_only_waterhub_configuration(self):
         portal = self.layer["portal"]

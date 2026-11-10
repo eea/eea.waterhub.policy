@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "eea.waterhub.policy"
-version = "1.1"
+version = "1.2"
 description = "Plone policy package for the Copernicus Thematic Water Hub"
 readme = "README.md"
 requires-python = ">=3.12,<3.14"
@@ -26,6 +26,7 @@ classifiers = [
 ]
 dependencies = [
   "Plone>=6.1.5,<6.2",
+  "collective.taxonomy",
   "eea.volto.policy==14.2",
   "plone.volto",
   "setuptools",
@@ -60,7 +61,12 @@ namespaces = true
 include = ["eea.waterhub.policy*"]
 
 [tool.setuptools.package-data]
-"eea.waterhub.policy" = ["*.txt", "*.zcml", "profiles/**/*.xml"]
+"eea.waterhub.policy" = [
+  "*.txt",
+  "*.zcml",
+  "profiles/**/*.cfg",
+  "profiles/**/*.xml",
+]
 
 [tool.pytest.ini_options]
 testpaths = ["src/eea/waterhub/policy/tests"]

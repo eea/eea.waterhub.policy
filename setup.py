@@ -25,10 +25,16 @@ setup(
     ),
     include_package_data=True,
     package_data={
-        "eea.waterhub.policy": ["*.txt", "*.zcml", "profiles/**/*.xml"],
+        "eea.waterhub.policy": [
+            "*.txt",
+            "*.zcml",
+            "profiles/**/*.cfg",
+            "profiles/**/*.xml",
+        ],
     },
     install_requires=[
         "Plone>=6.1.5,<6.2",
+        "collective.taxonomy",
         "eea.volto.policy==14.2",
         "plone.volto",
         "setuptools",
