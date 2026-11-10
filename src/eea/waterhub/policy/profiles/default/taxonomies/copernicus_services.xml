@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vdex xmlns="http://www.imsglobal.org/xsd/imsvdex_v1p0" language="en" orderSignificant="true" profileType="hierarchicalTokenTerms">
+  <vocabName><langstring language="en">Copernicus Services</langstring></vocabName>
+  <vocabIdentifier>copernicus_services</vocabIdentifier>
+  <term><termIdentifier>CLMS</termIdentifier><caption><langstring language="en">Copernicus Land Monitoring Service</langstring></caption></term>
+  <term><termIdentifier>CMEMS</termIdentifier><caption><langstring language="en">Copernicus Marine Service</langstring></caption></term>
+  <term><termIdentifier>CAMS</termIdentifier><caption><langstring language="en">Copernicus Atmosphere Monitoring Service</langstring></caption></term>
+  <term><termIdentifier>CEMS</termIdentifier><caption><langstring language="en">Copernicus Emergency Management Service</langstring></caption></term>
+  <term><termIdentifier>CSS</termIdentifier><caption><langstring language="en">Copernicus Security Service</langstring></caption></term>
+  <term><termIdentifier>C3S</termIdentifier><caption><langstring language="en">Copernicus Climate Change Service</langstring></caption></term>
+</vdex>

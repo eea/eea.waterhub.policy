@@ -31,5 +31,14 @@
       profile="eea.waterhub.policy:default"
       />
 
+  <genericsetup:upgradeStep
+      title="Import the Copernicus taxonomies"
+      description="Create the services, components, and themes taxonomies."
+      source="1001"
+      destination="1002"
+      handler=".upgrades.import_copernicus_taxonomies"
+      profile="eea.waterhub.policy:default"
+      />
+
 </configure>
 

@@ -3,6 +3,12 @@ Changelog
 
 1.2-dev0 - (unreleased)
 ---------------------------
+* Add Copernicus Services, Copernicus Components, and Copernicus themes
+  taxonomies, including an upgrade step for existing sites.
+  [GhitaB]
+* Align the package metadata with the 1.2 development version so deployments
+  pick up the new upgrade registration.
+  [GhitaB]
 
 1.1 - (2026-11-05)
 ---------------------------
