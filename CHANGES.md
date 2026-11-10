@@ -1,6 +1,9 @@
 Changelog
 =========
 
+1.3-dev0 - (unreleased)
+---------------------------
+
 1.2 - (2026-11-10)
 ---------------------------
 * Add Copernicus Services, Copernicus Components, and Copernicus themes
