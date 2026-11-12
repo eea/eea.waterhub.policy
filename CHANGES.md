@@ -3,6 +3,9 @@ Changelog
 
 1.3-dev0 - (unreleased)
 ---------------------------
+* Feature: Add Friendly Captcha provider and control panel for
+  collective.volto.formsupport forms - refs #309130
+  [teodorvoicu]
 
 1.2 - (2026-11-10)
 ---------------------------

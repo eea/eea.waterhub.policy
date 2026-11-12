@@ -2,6 +2,7 @@
 
 import pytest
 from collective.taxonomy.interfaces import ITaxonomy
+from plone import api
 from plone.browserlayer.utils import registered_layers
 from Products.CMFCore.utils import getToolByName
 
@@ -59,16 +60,37 @@ class TestSetup:
 
         setup_tool.setLastVersionForProfile(profile, "1001")
         upgrades = setup_tool.listUpgrades(profile, simple=True)
-        setup_tool.setLastVersionForProfile(profile, "1002")
+        setup_tool.setLastVersionForProfile(profile, "1003")
 
-        assert [step.dest for step in upgrades] == [("1002",)]
+        assert [step.dest for step in upgrades] == [("1002",), ("1003",)]
         assert upgrades[0].title == "Import the Copernicus taxonomies"
+        assert upgrades[1].title == "Install Friendly Captcha form support"
+
+    def test_formsupport_dependency_is_installed(self):
+        portal = self.layer["portal"]
+        setup_tool = getToolByName(portal, "portal_setup")
+        profile = "collective.volto.formsupport:default"
+        assert setup_tool.getLastVersionForProfile(profile) != "unknown"
+
+    def test_friendly_captcha_settings_are_registered(self):
+        prefix = "eea.waterhub.policy.friendly_captcha"
+        assert api.portal.get_registry_record(f"{prefix}.site_key") == ""
+        assert api.portal.get_registry_record(f"{prefix}.secret") == ""
+
+    def test_friendly_captcha_controlpanel_is_registered(self):
+        portal = self.layer["portal"]
+        controlpanel = getToolByName(portal, "portal_controlpanel")
+        actions = [action.getId() for action in controlpanel.listActions()]
+        assert "friendly-captcha-controlpanel" in actions
 
     def test_uninstall_profile_cleans_up_only_waterhub_configuration(self):
         portal = self.layer["portal"]
         setup_tool = getToolByName(portal, "portal_setup")
         setup_tool.runAllImportStepsFromProfile("profile-eea.waterhub.policy:uninstall")
         assert IWaterHubPolicyLayer not in registered_layers()
+        controlpanel = getToolByName(portal, "portal_controlpanel")
+        actions = [action.getId() for action in controlpanel.listActions()]
+        assert "friendly-captcha-controlpanel" not in actions
         assert (
             setup_tool.getLastVersionForProfile("eea.volto.policy:default") != "unknown"
         )

@@ -40,5 +40,14 @@
       profile="eea.waterhub.policy:default"
       />
 
+  <genericsetup:upgradeStep
+      title="Install Friendly Captcha form support"
+      description="Install collective.volto.formsupport and the Friendly Captcha control panel."
+      source="1002"
+      destination="1003"
+      handler=".upgrades.install_friendly_captcha"
+      profile="eea.waterhub.policy:default"
+      />
+
 </configure>
 
