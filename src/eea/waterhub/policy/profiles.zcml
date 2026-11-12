@@ -32,19 +32,20 @@
       />
 
   <genericsetup:upgradeStep
-<<<<<<< Updated upstream
       title="Import the Copernicus taxonomies"
       description="Create the services, components, and themes taxonomies."
       source="1001"
       destination="1002"
       handler=".upgrades.import_copernicus_taxonomies"
-=======
+      profile="eea.waterhub.policy:default"
+      />
+
+  <genericsetup:upgradeStep
       title="Install Friendly Captcha form support"
       description="Install collective.volto.formsupport and the Friendly Captcha control panel."
-      source="1001"
-      destination="1002"
+      source="1002"
+      destination="1003"
       handler=".upgrades.install_friendly_captcha"
->>>>>>> Stashed changes
       profile="eea.waterhub.policy:default"
       />
 
