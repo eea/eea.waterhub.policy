@@ -34,9 +34,14 @@ setup(
     },
     install_requires=[
         "Plone>=6.1.5,<6.2",
+<<<<<<< Updated upstream
         "collective.taxonomy",
+=======
+        "collective.volto.formsupport",
+>>>>>>> Stashed changes
         "eea.volto.policy==14.2",
         "plone.volto",
+        "requests",
         "setuptools",
     ],
     entry_points={"z3c.autoinclude.plugin": ["target = plone"]},

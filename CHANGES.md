@@ -1,6 +1,7 @@
 Changelog
 =========
 
+<<<<<<< Updated upstream
 1.3-dev0 - (unreleased)
 ---------------------------
 
@@ -12,6 +13,13 @@ Changelog
 * Align the package metadata with the 1.2 development version so deployments
   pick up the new upgrade registration.
   [GhitaB]
+=======
+1.2 - (unreleased)
+---------------------------
+* Feature: Add Friendly Captcha provider and control panel for
+  collective.volto.formsupport forms - refs #309130
+  [teodorvoicu]
+>>>>>>> Stashed changes
 
 1.1 - (2026-11-05)
 ---------------------------
