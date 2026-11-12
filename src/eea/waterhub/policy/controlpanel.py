@@ -20,15 +20,15 @@ FRIENDLY_CAPTCHA_PREFIX = "eea.waterhub.policy.friendly_captcha"
 class IFriendlyCaptchaSettings(Interface):
     """Friendly Captcha registry settings."""
 
-    public_key = schema.TextLine(
-        title=_("Public key"),
+    site_key = schema.TextLine(
+        title=_("Site key"),
         description=_("Friendly Captcha application sitekey."),
         required=False,
         default="",
     )
 
-    private_key = schema.TextLine(
-        title=_("Private key"),
+    secret = schema.TextLine(
+        title=_("API key"),
         description=_("Friendly Captcha API key used to verify solutions."),
         required=False,
         default="",

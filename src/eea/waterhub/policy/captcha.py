@@ -30,14 +30,14 @@ class FriendlyCaptchaSupport(CaptchaSupport):
     name = _("Friendly Captcha")
 
     def isEnabled(self):
-        return bool(get_setting("public_key") and get_setting("private_key"))
+        return bool(get_setting("site_key") and get_setting("secret"))
 
     def serialize(self):
         return {
             "provider": "friendly_captcha",
             "id": "friendly_captcha",
             "title": "Friendly Captcha",
-            "site_key": get_setting("public_key"),
+            "site_key": get_setting("site_key"),
         }
 
     def verify(self, data):
@@ -47,8 +47,8 @@ class FriendlyCaptchaSupport(CaptchaSupport):
 
         payload = {
             "solution": token,
-            "secret": get_setting("private_key"),
-            "sitekey": get_setting("public_key"),
+            "secret": get_setting("secret"),
+            "sitekey": get_setting("site_key"),
         }
         # Rejections come back as JSON with HTTP 200 (invalid solution) or 400
         # (bad configuration), so only network errors and non-JSON answers are

@@ -16,11 +16,9 @@ from eea.waterhub.policy.controlpanel import FRIENDLY_CAPTCHA_PREFIX
 from .layer import WATERHUB_POLICY_INTEGRATION_TESTING
 
 
-def set_keys(public_key="site-key", private_key="api-key"):
-    api.portal.set_registry_record(f"{FRIENDLY_CAPTCHA_PREFIX}.public_key", public_key)
-    api.portal.set_registry_record(
-        f"{FRIENDLY_CAPTCHA_PREFIX}.private_key", private_key
-    )
+def set_keys(site_key="site-key", secret="api-key"):
+    api.portal.set_registry_record(f"{FRIENDLY_CAPTCHA_PREFIX}.site_key", site_key)
+    api.portal.set_registry_record(f"{FRIENDLY_CAPTCHA_PREFIX}.secret", secret)
 
 
 def verify_response(payload, status_code=200):
@@ -57,7 +55,7 @@ class TestFriendlyCaptcha:
         set_keys()
         assert captcha.isEnabled()
 
-    def test_serialize_exposes_only_public_key(self, captcha):
+    def test_serialize_exposes_only_site_key(self, captcha):
         set_keys()
         props = captcha.serialize()
         assert props["provider"] == "friendly_captcha"

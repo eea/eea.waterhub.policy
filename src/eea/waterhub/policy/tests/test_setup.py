@@ -74,8 +74,8 @@ class TestSetup:
 
     def test_friendly_captcha_settings_are_registered(self):
         prefix = "eea.waterhub.policy.friendly_captcha"
-        assert api.portal.get_registry_record(f"{prefix}.public_key") == ""
-        assert api.portal.get_registry_record(f"{prefix}.private_key") == ""
+        assert api.portal.get_registry_record(f"{prefix}.site_key") == ""
+        assert api.portal.get_registry_record(f"{prefix}.secret") == ""
 
     def test_friendly_captcha_controlpanel_is_registered(self):
         portal = self.layer["portal"]
