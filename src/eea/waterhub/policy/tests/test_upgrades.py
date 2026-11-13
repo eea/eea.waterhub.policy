@@ -4,6 +4,7 @@ from unittest.mock import Mock
 
 from eea.waterhub.policy.upgrades import (
     import_copernicus_taxonomies,
+    import_user_profile_taxonomies,
     install_eea_volto_policy,
 )
 
@@ -24,6 +25,17 @@ def test_import_copernicus_taxonomies_runs_taxonomy_import_step():
     setup_tool = Mock()
 
     import_copernicus_taxonomies(setup_tool)
+
+    setup_tool.runImportStepFromProfile.assert_called_once_with(
+        "profile-eea.waterhub.policy:default", "collective.taxonomy"
+    )
+
+
+def test_import_user_profile_taxonomies_runs_taxonomy_import_step():
+    """The 1002-to-1003 upgrade imports the User Profile taxonomies."""
+    setup_tool = Mock()
+
+    import_user_profile_taxonomies(setup_tool)
 
     setup_tool.runImportStepFromProfile.assert_called_once_with(
         "profile-eea.waterhub.policy:default", "collective.taxonomy"

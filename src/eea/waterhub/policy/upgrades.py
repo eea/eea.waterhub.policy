@@ -11,3 +11,10 @@ def import_copernicus_taxonomies(context):
     context.runImportStepFromProfile(
         "profile-eea.waterhub.policy:default", "collective.taxonomy"
     )
+
+
+def import_user_profile_taxonomies(context):
+    """Import the User Profile taxonomies from the WaterHub profile."""
+    context.runImportStepFromProfile(
+        "profile-eea.waterhub.policy:default", "collective.taxonomy"
+    )
