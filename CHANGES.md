@@ -3,6 +3,9 @@ Changelog
 
 1.2-dev0 - (unreleased)
 ---------------------------
+* Add User Profile affiliation, thematic activity, and sector of activity
+  taxonomies, including an upgrade step for existing sites.
+  [GhitaB]
 * Add Copernicus Services, Copernicus Components, and Copernicus themes
   taxonomies, including an upgrade step for existing sites.
   [GhitaB]

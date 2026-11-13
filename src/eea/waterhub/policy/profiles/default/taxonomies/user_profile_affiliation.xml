@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vdex xmlns="http://www.imsglobal.org/xsd/imsvdex_v1p0" language="en" orderSignificant="true" profileType="hierarchicalTokenTerms">
+  <vocabName><langstring language="en">User Profile: AFFILIATION</langstring></vocabName>
+  <vocabIdentifier>user_profile_affiliation</vocabIdentifier>
+  <term><termIdentifier>Copernicus Services</termIdentifier><caption><langstring language="en">Copernicus Services</langstring></caption></term>
+  <term><termIdentifier>European Union institutions and bodies</termIdentifier><caption><langstring language="en">European Union institutions and bodies</langstring></caption></term>
+  <term><termIdentifier>National or regional public authorities in the European Union or Copernicus participating states</termIdentifier><caption><langstring language="en">National or regional public authorities in the European Union or Copernicus participating states</langstring></caption></term>
+  <term><termIdentifier>National or regional public authorities outside European Union and Copernicus participating states</termIdentifier><caption><langstring language="en">National or regional public authorities outside European Union and Copernicus participating states</langstring></caption></term>
+  <term><termIdentifier>Research and education organisations (other users)</termIdentifier><caption><langstring language="en">Research and education organisations (other users)</langstring></caption></term>
+  <term><termIdentifier>Commercial and private bodies – SMEs (≤250 employees)</termIdentifier><caption><langstring language="en">Commercial and private bodies – SMEs (≤250 employees)</langstring></caption></term>
+  <term><termIdentifier>Commercial and private bodies – non SMEs</termIdentifier><caption><langstring language="en">Commercial and private bodies – non SMEs</langstring></caption></term>
+  <term><termIdentifier>Charities and non-governmental organisations</termIdentifier><caption><langstring language="en">Charities and non-governmental organisations</langstring></caption></term>
+  <term><termIdentifier>Intergovernmental and international public organisations</termIdentifier><caption><langstring language="en">Intergovernmental and international public organisations</langstring></caption></term>
+  <term><termIdentifier>Natural persons for non-commercial purposes</termIdentifier><caption><langstring language="en">Natural persons for non-commercial purposes</langstring></caption></term>
+  <term><termIdentifier>Other</termIdentifier><caption><langstring language="en">Other</langstring></caption></term>
+</vdex>
