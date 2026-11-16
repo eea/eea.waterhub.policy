@@ -1,8 +1,16 @@
 Changelog
 =========
 
+1.3 - (2026-11-16)
+---------------------------
+* Change: Develop
+  [GhitaB]
+
 1.2 - (2026-11-10)
 ---------------------------
+* Add User Profile affiliation, thematic activity, and sector of activity
+  taxonomies, including an upgrade step for existing sites.
+  [GhitaB]
 * Add Copernicus Services, Copernicus Components, and Copernicus themes
   taxonomies, including an upgrade step for existing sites.
   [GhitaB]

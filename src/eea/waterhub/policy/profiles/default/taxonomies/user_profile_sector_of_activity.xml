@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vdex xmlns="http://www.imsglobal.org/xsd/imsvdex_v1p0" language="en" orderSignificant="true" profileType="hierarchicalTokenTerms">
+  <vocabName><langstring language="en">User Profile: SECTOR OF ACTIVITY</langstring></vocabName>
+  <vocabIdentifier>user_profile_sector_of_activity</vocabIdentifier>
+  <term><termIdentifier>Commercial activity</termIdentifier><caption><langstring language="en">Commercial activity</langstring></caption></term>
+  <term><termIdentifier>Media and public relations</termIdentifier><caption><langstring language="en">Media and public relations</langstring></caption></term>
+  <term><termIdentifier>Policy support - support to EU policy or EU national or regional policy</termIdentifier><caption><langstring language="en">Policy support - support to EU policy or EU national or regional policy</langstring></caption></term>
+  <term><termIdentifier>Policy support - other</termIdentifier><caption><langstring language="en">Policy support - other</langstring></caption></term>
+  <term><termIdentifier>Research and education</termIdentifier><caption><langstring language="en">Research and education</langstring></caption></term>
+  <term><termIdentifier>Other</termIdentifier><caption><langstring language="en">Other</langstring></caption></term>
+</vdex>

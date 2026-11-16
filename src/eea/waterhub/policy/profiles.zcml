@@ -40,5 +40,14 @@
       profile="eea.waterhub.policy:default"
       />
 
+  <genericsetup:upgradeStep
+      title="Import the User Profile taxonomies"
+      description="Create the affiliation, thematic activity, and sector of activity taxonomies."
+      source="1002"
+      destination="1003"
+      handler=".upgrades.import_user_profile_taxonomies"
+      profile="eea.waterhub.policy:default"
+      />
+
 </configure>
 
