@@ -1,14 +1,27 @@
 Changelog
 =========
 
-1.3-dev0 - (unreleased)
+1.5-dev0 - (unreleased)
 ---------------------------
 * Feature: Add Friendly Captcha provider and control panel for
   collective.volto.formsupport forms - refs #309130
   [teodorvoicu]
 
+1.4 - (2026-11-17)
+---------------------------
+* Update the required ``eea.volto.policy`` version to 14.3.
+  [GhitaB]
+
+1.3 - (2026-11-16)
+---------------------------
+* Change: Develop
+  [GhitaB]
+
 1.2 - (2026-11-10)
 ---------------------------
+* Add User Profile affiliation, thematic activity, and sector of activity
+  taxonomies, including an upgrade step for existing sites.
+  [GhitaB]
 * Add Copernicus Services, Copernicus Components, and Copernicus themes
   taxonomies, including an upgrade step for existing sites.
   [GhitaB]

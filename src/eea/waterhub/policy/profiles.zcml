@@ -41,10 +41,19 @@
       />
 
   <genericsetup:upgradeStep
-      title="Install Friendly Captcha form support"
-      description="Install collective.volto.formsupport and the Friendly Captcha control panel."
+      title="Import the User Profile taxonomies"
+      description="Create the affiliation, thematic activity, and sector of activity taxonomies."
       source="1002"
       destination="1003"
+      handler=".upgrades.import_user_profile_taxonomies"
+      profile="eea.waterhub.policy:default"
+      />
+
+  <genericsetup:upgradeStep
+      title="Install Friendly Captcha form support"
+      description="Install collective.volto.formsupport and the Friendly Captcha control panel."
+      source="1003"
+      destination="1004"
       handler=".upgrades.install_friendly_captcha"
       profile="eea.waterhub.policy:default"
       />

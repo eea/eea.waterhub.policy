@@ -4,6 +4,7 @@ from unittest.mock import Mock
 
 from eea.waterhub.policy.upgrades import (
     import_copernicus_taxonomies,
+    import_user_profile_taxonomies,
     install_eea_volto_policy,
     install_friendly_captcha,
 )
@@ -31,8 +32,19 @@ def test_import_copernicus_taxonomies_runs_taxonomy_import_step():
     )
 
 
+def test_import_user_profile_taxonomies_runs_taxonomy_import_step():
+    """The 1002-to-1003 upgrade imports the User Profile taxonomies."""
+    setup_tool = Mock()
+
+    import_user_profile_taxonomies(setup_tool)
+
+    setup_tool.runImportStepFromProfile.assert_called_once_with(
+        "profile-eea.waterhub.policy:default", "collective.taxonomy"
+    )
+
+
 def test_install_friendly_captcha_installs_formsupport_and_settings():
-    """The 1002-to-1003 upgrade installs form support and the captcha settings."""
+    """The 1003-to-1004 upgrade installs form support and the captcha settings."""
     setup_tool = Mock()
 
     install_friendly_captcha(setup_tool)

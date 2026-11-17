@@ -13,6 +13,13 @@ def import_copernicus_taxonomies(context):
     )
 
 
+def import_user_profile_taxonomies(context):
+    """Import the User Profile taxonomies from the WaterHub profile."""
+    context.runImportStepFromProfile(
+        "profile-eea.waterhub.policy:default", "collective.taxonomy"
+    )
+
+
 def install_friendly_captcha(context):
     """Install form support and the Friendly Captcha settings."""
     context.runAllImportStepsFromProfile("profile-collective.volto.formsupport:default")

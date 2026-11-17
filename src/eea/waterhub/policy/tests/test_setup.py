@@ -41,6 +41,17 @@ class TestSetup:
             ("copernicus_services", "Copernicus Services", 6),
             ("copernicus_components", "Copernicus Components", 26),
             ("copernicus_themes", "Copernicus themes", 36),
+            ("user_profile_affiliation", "User Profile: AFFILIATION", 11),
+            (
+                "user_profile_thematic_activity",
+                "User Profile: THEMATIC ACTIVITY",
+                16,
+            ),
+            (
+                "user_profile_sector_of_activity",
+                "User Profile: SECTOR OF ACTIVITY",
+                6,
+            ),
         ),
     )
     def test_copernicus_taxonomy_is_installed(self, name, title, expected_terms):
@@ -60,10 +71,26 @@ class TestSetup:
 
         setup_tool.setLastVersionForProfile(profile, "1001")
         upgrades = setup_tool.listUpgrades(profile, simple=True)
-        setup_tool.setLastVersionForProfile(profile, "1003")
+        setup_tool.setLastVersionForProfile(profile, "1004")
 
-        assert [step.dest for step in upgrades] == [("1002",), ("1003",)]
-        assert upgrades[0].title == "Import the Copernicus taxonomies"
+        assert [step.dest for step in upgrades] == [("1002",), ("1003",), ("1004",)]
+        assert [step.title for step in upgrades] == [
+            "Import the Copernicus taxonomies",
+            "Import the User Profile taxonomies",
+            "Install Friendly Captcha form support",
+        ]
+
+    def test_user_profile_upgrade_is_available_from_profile_1002(self):
+        portal = self.layer["portal"]
+        setup_tool = getToolByName(portal, "portal_setup")
+        profile = "eea.waterhub.policy:default"
+
+        setup_tool.setLastVersionForProfile(profile, "1002")
+        upgrades = setup_tool.listUpgrades(profile, simple=True)
+        setup_tool.setLastVersionForProfile(profile, "1004")
+
+        assert [step.dest for step in upgrades] == [("1003",), ("1004",)]
+        assert upgrades[0].title == "Import the User Profile taxonomies"
         assert upgrades[1].title == "Install Friendly Captcha form support"
 
     def test_formsupport_dependency_is_installed(self):
