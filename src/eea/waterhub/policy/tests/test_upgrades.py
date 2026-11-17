@@ -6,6 +6,7 @@ from eea.waterhub.policy.upgrades import (
     import_copernicus_taxonomies,
     import_user_profile_taxonomies,
     install_eea_volto_policy,
+    install_friendly_captcha,
 )
 
 
@@ -40,3 +41,18 @@ def test_import_user_profile_taxonomies_runs_taxonomy_import_step():
     setup_tool.runImportStepFromProfile.assert_called_once_with(
         "profile-eea.waterhub.policy:default", "collective.taxonomy"
     )
+
+
+def test_install_friendly_captcha_installs_formsupport_and_settings():
+    """The 1003-to-1004 upgrade installs form support and the captcha settings."""
+    setup_tool = Mock()
+
+    install_friendly_captcha(setup_tool)
+
+    setup_tool.runAllImportStepsFromProfile.assert_called_once_with(
+        "profile-collective.volto.formsupport:default"
+    )
+    assert [c.args for c in setup_tool.runImportStepFromProfile.call_args_list] == [
+        ("profile-eea.waterhub.policy:default", "plone.app.registry"),
+        ("profile-eea.waterhub.policy:default", "controlpanel"),
+    ]
