@@ -35,7 +35,7 @@ setup(
     install_requires=[
         "Plone>=6.1.5,<6.2",
         "collective.taxonomy",
-        "eea.volto.policy==14.2",
+        "eea.volto.policy==14.3",
         "plone.volto",
         "setuptools",
     ],

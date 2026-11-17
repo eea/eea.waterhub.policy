@@ -1,6 +1,11 @@
 Changelog
 =========
 
+1.4 - (2026-11-17)
+---------------------------
+* Update the required ``eea.volto.policy`` version to 14.3.
+  [GhitaB]
+
 1.3 - (2026-11-16)
 ---------------------------
 * Change: Develop
