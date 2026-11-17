@@ -1,6 +1,9 @@
 Changelog
 =========
 
+1.6-dev0 - (unreleased)
+---------------------------
+
 1.5 - (2026-11-17)
 ---------------------------
 * Feature: Add Friendly Captcha provider and control panel for
