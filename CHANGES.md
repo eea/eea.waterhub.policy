@@ -3,6 +3,8 @@ Changelog
 
 1.4-dev0 - (unreleased)
 ---------------------------
+* Update the required ``eea.volto.policy`` version to 14.3.
+  [GhitaB]
 
 1.3 - (2026-11-16)
 ---------------------------

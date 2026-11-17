@@ -13,7 +13,7 @@ The policy is developed and tested with the stack pinned by
 
 - Plone `6.1.5`
 - Python `3.12`
-- `eea.volto.policy` `14.2`
+- `eea.volto.policy` `14.3`
 
 Package metadata accepts compatible Plone `6.1.x` releases, while the backend
 image remains the source of the exact deployed Plone and Python versions.
