@@ -1,6 +1,9 @@
 Changelog
 =========
 
+1.5-dev0 - (unreleased)
+---------------------------
+
 1.4 - (2026-11-17)
 ---------------------------
 * Update the required ``eea.volto.policy`` version to 14.3.
