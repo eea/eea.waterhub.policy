@@ -1,6 +1,12 @@
 Changelog
 =========
 
+1.5 - (2026-11-17)
+---------------------------
+* Feature: Add Friendly Captcha provider and control panel for
+  collective.volto.formsupport forms - refs #309130
+  [teodorvoicu]
+
 1.4 - (2026-11-17)
 ---------------------------
 * Update the required ``eea.volto.policy`` version to 14.3.
