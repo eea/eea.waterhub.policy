@@ -1,7 +1,7 @@
 Changelog
 =========
 
-1.5-dev0 - (unreleased)
+1.5 - (2026-11-17)
 ---------------------------
 * Feature: Add Friendly Captcha provider and control panel for
   collective.volto.formsupport forms - refs #309130
