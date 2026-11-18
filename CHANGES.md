@@ -1,6 +1,11 @@
 Changelog
 =========
 
+1.6 - (2026-11-18)
+---------------------------
+* Bug fix: Add package keywords, so the package page on eggrepo renders.
+  [teodorvoicu]
+
 1.5 - (2026-11-17)
 ---------------------------
 * Feature: Add Friendly Captcha provider and control panel for
