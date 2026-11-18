@@ -14,7 +14,7 @@ setup(
     description="Plone policy package for the Copernicus Thematic Water Hub",
     long_description=(ROOT / "README.md").read_text(),
     long_description_content_type="text/markdown",
-    keywords="EEA Add-ons Plone Zope Copernicus Water Hub",
+    keywords="EEA Add-ons Plone Zope Copernicus Waterhub",
     author="European Environment Agency",
     url="https://github.com/eea/eea.waterhub.policy",
     license="MIT",
