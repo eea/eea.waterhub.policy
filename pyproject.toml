@@ -9,6 +9,7 @@ description = "Plone policy package for the Copernicus Thematic Water Hub"
 readme = "README.md"
 requires-python = ">=3.12,<3.14"
 license = {text = "MIT"}
+keywords = ["EEA", "Add-ons", "Plone", "Zope", "Copernicus", "Water", "Hub"]
 authors = [
   {name = "European Environment Agency"},
 ]

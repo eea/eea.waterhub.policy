@@ -3,6 +3,8 @@ Changelog
 
 1.6-dev0 - (unreleased)
 ---------------------------
+* Bug fix: Add package keywords, so the package page on eggrepo renders.
+  [teodorvoicu]
 
 1.5 - (2026-11-17)
 ---------------------------
