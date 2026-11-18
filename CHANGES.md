@@ -1,6 +1,9 @@
 Changelog
 =========
 
+1.7-dev0 - (unreleased)
+---------------------------
+
 1.6 - (2026-11-18)
 ---------------------------
 * Bug fix: Add package keywords, so the package page on eggrepo renders.
